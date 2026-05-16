@@ -1,10 +1,9 @@
-/* RESETEO GENERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* CUERPO DE LA PÁGINA */
+
 body {
     font-family: 'Arvo', serif;
     line-height: 1.6;
@@ -15,22 +14,40 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 header {
     background-color: #000; 
     color: #fff;            
-    padding: 3rem 1rem;
-    text-align: center;
+    padding: 2rem 4rem;             
     border-bottom: 4px solid #555; 
+    display: flex;                  
+    justify-content: space-between; 
+    align-items: center;            
 }
+
+.header-contenido {
+    text-align: left;               
+    max-width: 70%;
+}
+
 header h1 {
     font-size: 2.5rem;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
 header p {
     font-style: italic;
     color: #ccc;
 }
+
+.foto-header {
+    width: 110px;        
+    height: 110px;       
+    object-fit: cover;   
+    border-radius: 50%;  
+}
+
 nav {
     background-color: #1a1a1a;
     padding: 1rem;
@@ -38,14 +55,17 @@ nav {
     top: 0;
     z-index: 100;
 }
+
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
 }
+
 nav ul li {
     margin: 0 1.5rem;
 }
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -53,16 +73,19 @@ nav ul li a {
     font-size: 1rem;
     transition: color 0.3s;
 }
+
 nav ul li a:hover {
     color: #aaa;
 }
+
 main {
-    max-width: 900px; /* Ancho máximo para que sea legible */
+    max-width: 900px; 
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Sombra suave para que resalte */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
 }
+
 h2, h3 {
     color: #000;
     border-left: 5px solid #000; 
@@ -70,6 +93,7 @@ h2, h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
+
 blockquote {
     background: #eee;
     border-left: 10px solid #333;
@@ -78,15 +102,16 @@ blockquote {
     font-style: italic;
     font-size: 1.2rem;
 }
-/* LISTAS */
+
 ul {
     margin-left: 2rem;
     margin-bottom: 1rem;
 }
+
 li {
     margin-bottom: 0.5rem;
 }
-/* PIE DE PÁGINA */
+
 footer {
     text-align: center;
     padding: 2rem;
@@ -95,6 +120,7 @@ footer {
     font-size: 0.8rem;
     margin-top: 2rem;
 }
+
 footer a {
     color: #aaa;
     text-decoration: none;
