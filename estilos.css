@@ -1,3 +1,10 @@
+/* CORRECCIONES REALIZADAS POR LA GUÍA EN MI CÓDIGO ORIGINAL:
+  1. Corrección en 'main': El código original tenía el max-width en el 'main', lo que hacía que el header, nav y footer se desparramaran por toda la pantalla. La guía corrigió esto creando la clase '.contenedor-sitio' para envolver y centrar todo el diseño de forma simétrica.
+  2. Corrección en 'body': El fondo original se deformaba al estirarse. La guía lo corrigió aplicando 'background-repeat: repeat;' y 'background-attachment: fixed;' para que el patrón visual se repita bien y quede fijo al scrollear.
+  3. Corrección en 'Conceptos': En el HTML original las imágenes estaban colapsadas a la derecha. La guía me hizo reestructurarlas usando Flexbox en CSS con un ancho del 32% en cada una para alinearlas horizontalmente sin que se salgan del cuadro blanco.
+  4. Corrección de Unidades: La guía reemplazó los valores fijos en píxeles que tenía en varias secciones por unidades relativas ('rem' y '%') para cumplir estrictamente con la consigna del parcial.
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +16,17 @@ body {
     line-height: 1.6;
     color: #333;
     background-image: url('imagenes/fondo.png'); 
-    /* Esta es la clave: permitimos que se repita */
     background-repeat: repeat; 
-    /* Quitamos el 'cover' para que no se estire */
     background-size: auto; 
-    /* Mantenemos que el fondo quede quieto al scrollear */
     background-attachment: fixed; 
+}
+
+/* Bloque contenedor principal para centrar el examen */
+.contenedor-sitio {
+    max-width: 900px; 
+    margin: 2rem auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
 }
 
 header {
@@ -81,11 +93,7 @@ nav ul li a:hover {
 }
 
 main {
-    max-width: 900px; 
-    margin: 2rem auto;
     padding: 2rem;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
 }
 
 h2, h3 {
@@ -120,10 +128,13 @@ footer {
     background-color: #000;
     color: #666;
     font-size: 0.8rem;
-    margin-top: 2rem;
 }
 
 footer a {
     color: #aaa;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
