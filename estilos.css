@@ -1,11 +1,3 @@
-/* CORRECCIONES Y OPTIMIZACIONES REALIZADAS EN EL DISEÑO:
-  1. Estructura de Bloques Completa: Se maquetaron el header, nav y footer para que se extiendan a lo ancho de la pantalla, manteniendo la simetría y coincidencia en las tres páginas (Puntos 5 y 6).
-  2. Implementación de Bloque con Ancho Máximo: Se corrigió la maquetación del contenido principal envolviendo el 'main' dentro de un elemento con la clase '.contenedor-principal' configurado a un max-width de 900px y centrado con márgenes automáticos (Punto 12).
-  3. Control de Legibilidad y Fondos: Se asignó la imagen de mosaico azul como fondo general del body (Punto 11) y se aplicó un color de fondo blanco ('background-color: #fff;') exclusivamente al contenedor del texto (Punto 13), garantizando un contraste óptimo para la lectura.
-  4. Alineación Flexible de Imágenes: En la sección de Conceptos, las imágenes se estructuraron horizontalmente con Flexbox y anchos relativos del 32% para evitar desbordamientos.
-  5. Unidades Relativas obligatorias: Se reemplazaron todos los valores fijos por rem para tipografías y espaciados, y porcentajes (%) para el dimensionamiento adaptativo (Punto 15).
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -16,22 +8,23 @@ body {
     font-family: 'Arvo', serif;
     line-height: 1.6;
     color: #333;
-    /* Coloca el mosaico azul de fondo en toda la página */
     background-image: url('imagenes/fondo.png'); 
+    /* Esta es la clave: permitimos que se repita */
     background-repeat: repeat; 
+    /* Quitamos el 'cover' para que no se estire */
     background-size: auto; 
+    /* Mantenemos que el fondo quede quieto al scrollear */
     background-attachment: fixed; 
 }
 
 header {
     background-color: #000; 
     color: #fff;            
-    padding: 2rem 10%;             
+    padding: 2rem 4rem;             
     border-bottom: 4px solid #555; 
     display: flex;                  
     justify-content: space-between; 
     align-items: center;            
-    width: 100%;
 }
 
 .header-contenido {
@@ -63,7 +56,6 @@ nav {
     position: sticky; 
     top: 0;
     z-index: 100;
-    width: 100%;
 }
 
 nav ul {
@@ -88,13 +80,12 @@ nav ul li a:hover {
     color: #aaa;
 }
 
-/* ESTA ES LA CORRECCIÓN CLAVE: El cuadro blanco centrado que flota sobre el mosaico */
-.contenedor-principal {
+main {
     max-width: 900px; 
-    margin: 3rem auto; /* Separa el cuadro del menú y del footer dejando ver el mosaico */
-    background-color: #fff; /* Tu cuadro blanco original */
-    padding: 3rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra para darle profundidad */
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
 }
 
 h2, h3 {
@@ -129,15 +120,10 @@ footer {
     background-color: #000;
     color: #666;
     font-size: 0.8rem;
-    border-top: 4px solid #555;
-    width: 100%;
+    margin-top: 2rem;
 }
 
 footer a {
     color: #aaa;
     text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
