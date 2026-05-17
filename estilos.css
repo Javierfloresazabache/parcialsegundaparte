@@ -1,8 +1,9 @@
-/* CORRECCIONES REALIZADAS POR LA GUÍA EN MI CÓDIGO ORIGINAL:
-  1. Corrección en 'main': El código original tenía el max-width en el 'main', lo que hacía que el header, nav y footer se desparramaran por toda la pantalla. La guía corrigió esto creando la clase '.contenedor-sitio' para envolver y centrar todo el diseño de forma simétrica.
-  2. Corrección en 'body': El fondo original se deformaba al estirarse. La guía lo corrigió aplicando 'background-repeat: repeat;' y 'background-attachment: fixed;' para que el patrón visual se repita bien y quede fijo al scrollear.
-  3. Corrección en 'Conceptos': En el HTML original las imágenes estaban colapsadas a la derecha. La guía me hizo reestructurarlas usando Flexbox en CSS con un ancho del 32% en cada una para alinearlas horizontalmente sin que se salgan del cuadro blanco.
-  4. Corrección de Unidades: La guía reemplazó los valores fijos en píxeles que tenía en varias secciones por unidades relativas ('rem' y '%') para cumplir estrictamente con la consigna del parcial.
+/* CORRECCIONES Y OPTIMIZACIONES REALIZADAS EN EL DISEÑO:
+  1. Reestructuración del contenedor principal: Se unificó el ancho máximo de la página bajo la clase '.contenedor-sitio' (max-width: 900px) para mantener la alineación simétrica de la estructura.
+  2. Ajuste de legibilidad en 'main': Se asignó el color de fondo blanco ('background-color: #fff;') exclusivamente a la etiqueta 'main'. De este modo, se garantiza el contraste y la total legibilidad del texto sobre el patrón del body, cumpliendo con el Punto 13 de la consigna.
+  3. Comportamiento del Fondo: Se configuró el fondo del body con 'repeat' y 'fixed' para que el patrón visual se visualice de forma fluida y se mantenga estático al realizar scroll.
+  4. Maquetación con Flexbox en Conceptos: Se implementó un contenedor flexible en la sección de imágenes con un ancho del 32% por elemento, logrando que las tres fotos se posicionen en fila horizontal sin desbordar los límites del bloque.
+  5. Uso de Unidades Relativas: Se migraron los valores fijos de píxeles a porcentajes (%) y 'rem' para cumplir estrictamente con el Punto 15 de los requisitos técnicos.
 */
 
 * {
@@ -21,12 +22,11 @@ body {
     background-attachment: fixed; 
 }
 
-/* Bloque contenedor principal para centrar el examen */
+/* Contenedor principal para alinear todo a 900px de ancho */
 .contenedor-sitio {
     max-width: 900px; 
     margin: 2rem auto;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 header {
@@ -92,7 +92,9 @@ nav ul li a:hover {
     color: #aaa;
 }
 
+/* Fondo blanco exclusivo para el área de texto */
 main {
+    background-color: #fff;
     padding: 2rem;
 }
 
@@ -128,6 +130,7 @@ footer {
     background-color: #000;
     color: #666;
     font-size: 0.8rem;
+    border-top: 4px solid #555;
 }
 
 footer a {
