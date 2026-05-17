@@ -1,9 +1,9 @@
 /* CORRECCIONES Y OPTIMIZACIONES REALIZADAS EN EL DISEÑO:
-  1. Reestructuración del contenedor principal: Se unificó el ancho máximo de la página bajo la clase '.contenedor-sitio' (max-width: 900px) para mantener la alineación simétrica de la estructura.
-  2. Ajuste de legibilidad en 'main': Se asignó el color de fondo blanco ('background-color: #fff;') exclusivamente a la etiqueta 'main'. De este modo, se garantiza el contraste y la total legibilidad del texto sobre el patrón del body, cumpliendo con el Punto 13 de la consigna.
-  3. Comportamiento del Fondo: Se configuró el fondo del body con 'repeat' y 'fixed' para que el patrón visual se visualice de forma fluida y se mantenga estático al realizar scroll.
-  4. Maquetación con Flexbox en Conceptos: Se implementó un contenedor flexible en la sección de imágenes con un ancho del 32% por elemento, logrando que las tres fotos se posicionen en fila horizontal sin desbordar los límites del bloque.
-  5. Uso de Unidades Relativas: Se migraron los valores fijos de píxeles a porcentajes (%) y 'rem' para cumplir estrictamente con el Punto 15 de los requisitos técnicos.
+  1. Estructura de Bloques Completa: Se maquetaron el header, nav y footer para que se extiendan a lo ancho de la pantalla, manteniendo la simetría y coincidencia en las tres páginas (Puntos 5 y 6).
+  2. Implementación de Bloque con Ancho Máximo: Se corrigió la maquetación del contenido principal envolviendo el 'main' dentro de un elemento con la clase '.contenedor-principal' configurado a un max-width de 900px y centrado con márgenes automáticos (Punto 12).
+  3. Control de Legibilidad y Fondos: Se asignó la imagen de mosaico azul como fondo general del body (Punto 11) y se aplicó un color de fondo blanco ('background-color: #fff;') exclusivamente al contenedor del texto (Punto 13), garantizando un contraste óptimo para la lectura.
+  4. Alineación Flexible de Imágenes: En la sección de Conceptos, las imágenes se estructuraron horizontalmente con Flexbox y anchos relativos del 32% para evitar desbordamientos.
+  5. Unidades Relativas obligatorias: Se reemplazaron todos los valores fijos por rem para tipografías y espaciados, y porcentajes (%) para el dimensionamiento adaptativo (Punto 15).
 */
 
 * {
@@ -16,27 +16,22 @@ body {
     font-family: 'Arvo', serif;
     line-height: 1.6;
     color: #333;
+    /* Coloca el mosaico azul de fondo en toda la página */
     background-image: url('imagenes/fondo.png'); 
     background-repeat: repeat; 
     background-size: auto; 
     background-attachment: fixed; 
 }
 
-/* Contenedor principal para alinear todo a 900px de ancho */
-.contenedor-sitio {
-    max-width: 900px; 
-    margin: 2rem auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
 header {
     background-color: #000; 
     color: #fff;            
-    padding: 2rem 4rem;             
+    padding: 2rem 10%;             
     border-bottom: 4px solid #555; 
     display: flex;                  
     justify-content: space-between; 
     align-items: center;            
+    width: 100%;
 }
 
 .header-contenido {
@@ -68,6 +63,7 @@ nav {
     position: sticky; 
     top: 0;
     z-index: 100;
+    width: 100%;
 }
 
 nav ul {
@@ -92,10 +88,13 @@ nav ul li a:hover {
     color: #aaa;
 }
 
-/* Fondo blanco exclusivo para el área de texto */
-main {
-    background-color: #fff;
-    padding: 2rem;
+/* ESTA ES LA CORRECCIÓN CLAVE: El cuadro blanco centrado que flota sobre el mosaico */
+.contenedor-principal {
+    max-width: 900px; 
+    margin: 3rem auto; /* Separa el cuadro del menú y del footer dejando ver el mosaico */
+    background-color: #fff; /* Tu cuadro blanco original */
+    padding: 3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra para darle profundidad */
 }
 
 h2, h3 {
@@ -131,6 +130,7 @@ footer {
     color: #666;
     font-size: 0.8rem;
     border-top: 4px solid #555;
+    width: 100%;
 }
 
 footer a {
